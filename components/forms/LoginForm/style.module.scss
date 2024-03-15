@@ -1,0 +1,46 @@
+@keyframes open {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.formLink {
+    color: var(--primary-blue);
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:nth-child(2) {
+        position: relative;
+        top: 0.25rem;
+        left: 60%;
+        text-align: right;
+        text-decoration: none;
+    }
+}
+
+.hiddenPassword {
+    opacity: 0;
+    display: none;
+}
+
+.displayedPassword {
+    opacity: 100;
+    display: block;
+    transition: all 0.7s ease-in-out;
+    animation: open 0.5s ease-in-out;
+}
+
+.underText {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    line-height: 20px;
+}
+
+.submit {
+    width: 100%;
+}
