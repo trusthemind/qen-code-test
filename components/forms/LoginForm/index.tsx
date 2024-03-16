@@ -38,7 +38,7 @@ export const LoginForm = () => {
 
       <Form.Item
         className={cn(s.hiddenPassword, {
-          [s.displayedPassword]: watch("password")?.length != 0 || watch("email")?.length > 3,
+          [s.displayedPassword]: !!watch("password")?.length || watch("email")?.length > 3,
         })}
       >
         <CustomInput
@@ -54,7 +54,7 @@ export const LoginForm = () => {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" size="large" className={s.submit} htmlType="submit">
+        <Button type="primary" className={s.submit} htmlType="submit">
           Submit
         </Button>
       </Form.Item>

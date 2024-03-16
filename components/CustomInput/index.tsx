@@ -1,6 +1,7 @@
 import React from "react";
 import { Controller, FieldError, useForm } from "react-hook-form";
-import { Input } from "antd";
+import { Input, Typography } from "antd";
+import FormItemLabel from "antd/es/form/FormItemLabel";
 
 export interface CustomInputProps {
   label?: string;
@@ -21,7 +22,7 @@ export const CustomInput = ({
 }: CustomInputProps) => {
   return (
     <div className="input-container">
-      <label>{label}</label>
+      <Typography style={{ fontWeight: "bold", marginBottom: 2.5 }}>{label}</Typography>
       <Controller
         name={rest.name}
         control={rest.control}
@@ -35,7 +36,9 @@ export const CustomInput = ({
           />
         )}
       />
-      <span className={"error-message"}>{error && error.message}</span>
+      <span className={"error-message"} color="">
+        {error && error.message}
+      </span>
     </div>
   );
 };

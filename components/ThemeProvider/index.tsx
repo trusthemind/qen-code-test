@@ -11,9 +11,9 @@ const themeConfig: ThemeConfig = {
       defaultBorderColor: "var(--ligth-grey)",
       colorPrimaryBorder: "var(--primary-blue)",
     },
-    Input: { activeBorderColor: "var(--primary-blue)",controlHeight:36, activeShadow: "none" },
+    Input: { activeBorderColor: "var(--primary-blue)", controlHeight: 36, activeShadow: "none" },
   },
-  token: { colorPrimary: "var(--primary-blue)", fontSize: 14, fontFamily: "var(--grotes)" },
+  token: { colorPrimary: "#316FEA", fontSize: 14, fontFamily: "var(--grotes)" },
 };
 
 export const ThemeProvider = ({ children }: LayoutProps) => {

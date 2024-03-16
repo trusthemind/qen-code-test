@@ -9,6 +9,7 @@
   --primary-blue: #316FEA;
   --white: #eff2f1;
   --ligth-grey: #D3D8DC;
+  --error: #ff4d4f;
 }
 
 * {
@@ -30,5 +31,8 @@ main {
 }
 
 .error-message {
-  color: red;
+  color: var(--error);
+  margin-left: 0.25rem;
+  font-size: 13px;
+  font-weight: bold;
 }
