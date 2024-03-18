@@ -4,12 +4,15 @@ import { CustomInput } from "@/components/CustomInput";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ForgotSchema } from "@/utils/validation/chemas/forgot";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useDispatch } from "react-redux";
+import { SetNext } from "@/redux/slices/forgot";
 
 type Inputs = {
   email: string;
 };
 
-export const ForgotForm = () => {
+export const ForgotPassword_EmailForm = () => {
+  const dispatch = useDispatch();
   const {
     register,
     control,
@@ -18,7 +21,9 @@ export const ForgotForm = () => {
     formState: { errors },
   } = useForm<Inputs>({ resolver: yupResolver(ForgotSchema), mode: "all" });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    dispatch(SetNext({completed:true}));
+  };
 
   return (
     <Form onFinish={handleSubmit(onSubmit)}>

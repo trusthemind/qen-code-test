@@ -1,8 +1,9 @@
+"use client";
 import type { Metadata } from "next";
 import "./globals.scss";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { Layout } from "@/components/Layout";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "QenCode",
   description: "This is a test form task for QenCode",
 };
@@ -14,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeProvider>
+      <Layout>
         <body>{children}</body>
-      </ThemeProvider>
+      </Layout>
     </html>
   );
 }

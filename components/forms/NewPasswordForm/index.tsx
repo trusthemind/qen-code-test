@@ -9,7 +9,7 @@ type Inputs = {
   repeated_password: string;
 };
 
-export const NewPasswordForm = () => {
+export const NewPasswordsForm = () => {
   const {
     register,
     control,
