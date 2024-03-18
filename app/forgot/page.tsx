@@ -9,7 +9,7 @@ export default function Forgot() {
       <Card>
         <FormTitle text="Forgot Password?" />
         <ForgotForm />
-        {/* <NewPasswordForm/> */}
+        <NewPasswordForm/>
       </Card>
     </main>
   );

@@ -46,7 +46,7 @@ export const LoginForm = () => {
           control={control}
           error={errors.password && errors.password}
           placeholder="Password"
-          type="pasword"
+          type="password"
         />
         <Link href={AppRoutes.FORGOT} className={s.formLink}>
           Forgot your password?

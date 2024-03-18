@@ -10,8 +10,8 @@ export const LoginSchema = yup.object().shape({
       .matches(/^[-_a-zA-Z0-9@.]{1,50}$/, ErrorInputs.fieldInvalid),
       password: yup
       .string()
-      .min(8, ErrorInputs.fieldInvalid)
+      .min(6, ErrorInputs.fieldInvalid)
       .required(ErrorInputs.fieldReqiered)
-      .matches(/^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+$/,ErrorInputs.fieldInvalid),
+      .matches(/^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+$/, ErrorInputs.fieldInvalid),
   });
   
