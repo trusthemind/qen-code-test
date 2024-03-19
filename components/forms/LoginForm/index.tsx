@@ -1,5 +1,5 @@
 "use client";
-import { Form, Input, Button } from "antd";
+import { Form, Button } from "antd";
 import s from "./style.module.scss";
 import Link from "next/link";
 import { AppRoutes } from "@/utils/constans/constants";
@@ -8,6 +8,8 @@ import { LoginSchema } from "@/utils/validation/chemas/login";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { CustomInput } from "@/components/CustomInput";
 import cn from "classnames";
+import { fetchData } from "@/helpers/promise";
+import { notification } from "@/utils/notification";
 
 type Inputs = {
   email: string;
@@ -22,7 +24,16 @@ export const LoginForm = () => {
     watch,
     formState: { errors },
   } = useForm<Inputs>({ resolver: yupResolver(LoginSchema), mode: "all" });
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    const { data: authData, error } = await fetchData({
+      url: "v1/auth/login",
+      method: "POST",
+      payload: { email: data.email, password: data.password },
+    });
+
+    authData && notification("success", "You successfully logged in.");
+  };
 
   return (
     <Form className={s.loginForm} onFinish={handleSubmit(onSubmit)}>
@@ -38,7 +49,7 @@ export const LoginForm = () => {
 
       <Form.Item
         className={cn(s.hiddenPassword, {
-          [s.displayedPassword]: !!watch("password")?.length || watch("email")?.length > 3,
+          [s.displayedPassword]: !control.getFieldState("email").invalid,
         })}
       >
         <CustomInput

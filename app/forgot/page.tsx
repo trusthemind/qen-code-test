@@ -10,7 +10,6 @@ export default function Forgot() {
   const component = ForgotComponents[currentStep as keyof typeof ForgotComponents];
   const text = currentStep == 0 ? "Forgot Password" : "Create New Password?";
 
-  console.log(currentStep, component);
   return (
     <main>
       <Card>

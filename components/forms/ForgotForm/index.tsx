@@ -26,7 +26,7 @@ export const ForgotPassword_EmailForm = () => {
   };
 
   return (
-    <Form onFinish={handleSubmit(onSubmit)}>
+    <Form onFinish={handleSubmit(onSubmit)} style={{width: "18rem"}}>
       <Form.Item>
         <CustomInput
           name="email"

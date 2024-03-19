@@ -1,8 +1,10 @@
 "use client";
 import { CustomInput } from "@/components/CustomInput";
+import { AppRoutes } from "@/utils/constans/constants";
 import { NewPasswordSchema } from "@/utils/validation/chemas/createNewPasswrod";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Form } from "antd";
+import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 type Inputs = {
   password: string;
@@ -17,8 +19,11 @@ export const NewPasswordsForm = () => {
     watch,
     formState: { errors },
   } = useForm<Inputs>({ resolver: yupResolver(NewPasswordSchema), mode: "all" });
+  const { push } = useRouter();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    push(AppRoutes.LOGIN);
+  };
   return (
     <Form>
       <Form.Item>
@@ -44,7 +49,7 @@ export const NewPasswordsForm = () => {
       </Form.Item>
 
       <Form.Item>
-        <Button htmlType="submit" type="primary" style={{ width: "100%",height: "2.5rem" }}>
+        <Button htmlType="submit" type="primary" style={{ width: "100%", height: "2.5rem" }}>
           Reset Password
         </Button>
       </Form.Item>

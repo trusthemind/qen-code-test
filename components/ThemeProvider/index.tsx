@@ -3,7 +3,7 @@ import React from "react";
 
 const themeConfig: ThemeConfig = {
   components: {
-    Card: { colorBorderSecondary: "none" },
+    Card: { colorBorderSecondary: "#fff" },
     Button: {
       fontWeight: "bold",
       colorPrimaryText: "var(--white)",

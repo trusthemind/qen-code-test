@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 import { Layout } from "@/components/Layout";
+import NotificationContainer from "@/components/Notification";
 
 const metadata: Metadata = {
   title: "QenCode",
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Layout>
-        <body>{children}</body>
+        <body>{children}
+         <NotificationContainer />
+         </body>
       </Layout>
     </html>
   );
