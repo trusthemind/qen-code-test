@@ -72,7 +72,7 @@ export const LoginForm = () => {
 
       <Form.Item
         className={cn(s.hiddenPassword, {
-          [s.displayedPassword]: !control.getFieldState("email").invalid || watch("email").length == 0,
+          [s.displayedPassword]: !control.getFieldState("email").invalid || watch("email"),
         })}
       >
         <CustomInput
