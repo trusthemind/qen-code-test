@@ -9,6 +9,7 @@ npm install
 yarn install
 # or
 pnpm install
+```
 
 Run the development server:
 
