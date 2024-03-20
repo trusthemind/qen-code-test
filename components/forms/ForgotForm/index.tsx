@@ -6,6 +6,8 @@ import { ForgotSchema } from "@/utils/validation/chemas/forgot";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
 import { SetNext } from "@/redux/slices/forgot";
+import { fetchData } from "@/helpers/promise";
+import { notification } from "@/utils/notification";
 
 type Inputs = {
   email: string;
@@ -21,12 +23,20 @@ export const ForgotPassword_EmailForm = () => {
     formState: { errors },
   } = useForm<Inputs>({ resolver: yupResolver(ForgotSchema), mode: "all" });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    dispatch(SetNext({completed:true}));
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    dispatch(SetNext({ completed: true }));
+
+    const { data: emailData, error } = await fetchData({
+      url: "v1/auth/password-reset",
+      method: "POST",
+      payload: { email: data.email },
+    });
+
+    emailData && notification("success", "Reset email has been sended");
   };
 
   return (
-    <Form onFinish={handleSubmit(onSubmit)} style={{width: "18rem"}}>
+    <Form onFinish={handleSubmit(onSubmit)} style={{ width: "18rem" }}>
       <Form.Item>
         <CustomInput
           name="email"
