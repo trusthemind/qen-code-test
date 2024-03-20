@@ -96,7 +96,7 @@ export const LoginForm = () => {
 
       <p className={s.underText}>
         Is your company new to Qencode?
-        <Link href={AppRoutes.REGISTRATION} className={s.formLink}>
+        <Link href={"/"} className={s.formLink}>
           Sign Up
         </Link>
       </p>

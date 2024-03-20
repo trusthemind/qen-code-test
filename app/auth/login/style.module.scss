@@ -1,6 +1,10 @@
 .loginCard {
   width: 26rem;
 
+  .button {
+    padding: 1.25rem 2.5rem,
+  }
+
   .lineBlock {
     width: 100%;
     text-align: center;
@@ -16,5 +20,17 @@
     font-family: var(--grotes);
     background: #fff;
     padding: 0 0.5rem;
+  }
+
+
+}
+
+@media (max-width: 425px) {
+  .loginCard {
+    width: 22rem;
+
+    .button {
+      padding: 1rem;
+    }
   }
 }

@@ -5,3 +5,9 @@
     font-size: 30px;
     line-height: 38.7px;
 }
+
+@media (max-width: 425px) {
+    .textTitle {
+        font-size: 22px;
+    }
+}

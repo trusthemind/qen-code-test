@@ -18,8 +18,8 @@ export default function Login() {
               gap: "0.5rem",
               alignItems: "center",
               border: "1px solid var(--ligth-grey)",
-              padding: "1.25rem 2.5rem",
             }}
+            className={s.button}
           >
             <Image src={chrome} alt="chrome ico" />
             Google
@@ -31,8 +31,8 @@ export default function Login() {
               gap: "0.5rem",
               alignItems: "center",
               border: "1px solid var(--ligth-grey)",
-              padding: "1.25rem 2.5rem",
             }}
+            className={s.button}
           >
             <Image src={github} alt="github ico" />
             Github

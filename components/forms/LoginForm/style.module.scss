@@ -19,7 +19,13 @@
         left: 60%;
         text-align: right;
         text-decoration: none;
+
+        @media (max-width:425px) {
+            left: 50%;
+        }
     }
+
+
 }
 
 .hiddenPassword {

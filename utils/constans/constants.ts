@@ -1,8 +1,8 @@
 export enum AppRoutes {
   LANDING = "/",
   LOGIN = "/auth/login",
-  REGISTRATION = "/auth/registration",
   FORGOT = "/forgot",
+  PASSWORD_SET = "/password/new"
 }
 
 export enum ForgotPasswordForms {
