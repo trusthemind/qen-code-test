@@ -47,7 +47,6 @@ export const LoginForm = () => {
       method: "POST",
       payload: { email: data.email, password: data.password },
     });
-    Cookies.set("access_token", "true"); //! this is only for testing for future remove this
 
     if (authData) {
       const { access_token, token_expire, refresh_token, refresh_token_expire } = authData;
